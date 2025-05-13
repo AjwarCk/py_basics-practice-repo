@@ -1,2 +1,7 @@
 Hello world,
 Welcome to the paradise.
+
+Hello world,
+Welcome to the paradise.
+
+Hello.
