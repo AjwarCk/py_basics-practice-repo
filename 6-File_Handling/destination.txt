@@ -1,0 +1,5 @@
+Welcome to this practice file.
+This is the next line.
+Appending operation taking place!First line 
+Second line 
+Third line
