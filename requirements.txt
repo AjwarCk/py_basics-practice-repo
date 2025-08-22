@@ -3,4 +3,5 @@ pandas
 ipykernel
 openpyxl
 matplotlib
+seaborn
 #-e .
