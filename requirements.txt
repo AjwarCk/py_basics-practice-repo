@@ -1,4 +1,5 @@
 numpy
 pandas
 ipykernel
+openpyxl
 #-e .
