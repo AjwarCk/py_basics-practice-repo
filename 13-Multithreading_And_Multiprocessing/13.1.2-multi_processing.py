@@ -1,5 +1,5 @@
 ## Process that run in parallel
-## CPU-Bound Tasks-Tasks that are heavy on CPU usage (e.g., mathematical computations, data processing).
+## CPU-Bound Tasks that are heavy on CPU usage (e.g., mathematical computations, data processing).
 ## Parallel execution - Multiple cores of the CPU
 
 import time
