@@ -1,35 +1,33 @@
 ## Process that run in parallel
-## CPU-Bond Tasks-Tasks that are heavy on CPU usage (e.g., mathematical computations, data procesing).
+## CPU-Bound Tasks-Tasks that are heavy on CPU usage (e.g., mathematical computations, data processing).
 ## Parallel execution - Multiple cores of the CPU
 
+import time
 import multiprocessing
 
-import time
-
-def square_numbers():
-    for i in range(5):
-        time.sleep(1)
+def square_numbers(n,s):
+    for i in range(n):
+        time.sleep(s)
         print(f"Square: {i*i}")
 
-def cube_numbers():
-    for i in range(5):
-        time.sleep(1)
+def cube_numbers(n,s):
+    for i in range(n):
+        time.sleep(s)
         print(f"Cube: {i*i*i}")
 
 if __name__ == '__main__':
 
-    ## Create 2 process
-    p1 = multiprocessing.Process(target=square_numbers)
-    p2 = multiprocessing.Process(target=cube_numbers)
-    t = time.time()
+    p1 = multiprocessing.Process(target=square_numbers, args=(5,1))
+    p2 = multiprocessing.Process(target=cube_numbers, args=(5,1))
 
-    ## Start the process
+    start_time = time.time()
+
     p1.start()
     p2.start()
 
-    ## Wait for the process to complete
     p1.join()
     p2.join()
 
-    finished_time = time.time() - t
-    print(f"Finished time: {finished_time}")
+    end_time = time.time()
+
+    print(f"Total time took: {end_time - start_time} seconds.")
