@@ -31,14 +31,14 @@ urls = ['https://python.langchain.com/v0.2/docs/introduction/',
 def fetch_content(url):
     response = requests.get(url)
     soup = BeautifulSoup(response.content,'html.parser')
-    print(f"Fetched {len(soup.text)} characters fetched for {url}")
+    print(f"Fetched {len(soup.text)} characters from {url}")
 
 threads = []
 
 start_time = time.time()
 
 for url in urls:
-    thread = threading.Thread(target=fetch_content, args=(url,))
+    thread = threading.Thread(target=fetch_content,args=(url,))
     threads.append(thread)
     thread.start()
 
@@ -47,4 +47,4 @@ for thread in threads:
 
 end_time = time.time()
 
-print(f"All web pages fetched! and {end_time - start_time} seconds took.")
+print(f"All web pages fetched and {end_time - start_time} seconds took.")
