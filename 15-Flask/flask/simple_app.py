@@ -44,7 +44,7 @@ simple_app = Flask(__name__)
 
 @simple_app.route("/")
 def welcome():
-    return "Welcome to the Flask course!"
+    return "Welcome to the Flask course!!!"
 
 if __name__ == "__main__":
     simple_app.run()
