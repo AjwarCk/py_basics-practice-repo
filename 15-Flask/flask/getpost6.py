@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 ## WSGI Application
 app = Flask(__name__)
@@ -15,18 +15,19 @@ def index():
 def about():
     return render_template('about.html')
 
-@app.route("/form",methods=['GET','POST'])
+@app.route("/form",methods=['GET'])
 def form():
-    if request.method == 'POST':
-        name = request.form['name']
-        return f"Hello {name}, thanks for equiring!"
-    return render_template('simple_getpost4_form.html')
+    return render_template('getpost4_form.html')
+
+# @app.route("/submit",methods=['POST'])
+# def submit():
+#     name = request.form['name']
+#     return f"Hello {name}, thanks for submitting the form!!!"
 
 @app.route("/submit",methods=['POST'])
 def submit():
     name = request.form['name']
-    return f"Hellow {name}, thanks for equiring!"
-
+    return render_template('getpost5_thankyou.html',username=name)
 
 if __name__ == '__main__':
     app.run(debug=True)

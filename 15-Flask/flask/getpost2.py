@@ -3,9 +3,9 @@ from flask import Flask, render_template, request
 ## WSGI Application
 app = Flask(__name__)
 
-@app.route("/",methods=['GET'])
+@app.route("/")
 def welcome():
-    return "<html><h1>Welcome to the Flask crash coourse!</h1></html>"
+    return "<html><h1>This is a Flask course.</h1></html>"
 
 @app.route("/index",methods=['GET'])
 def index():
@@ -18,9 +18,8 @@ def about():
 @app.route("/form",methods=['GET','POST'])
 def form():
     if request.method == 'POST':
-        name = request.form['name']
-        return f"Hello {name}!!!"
-    return render_template('simple_getpost3_form.html')
+        pass
+    return render_template('getpost2_form.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
