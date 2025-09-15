@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result Page</title>
+    <h1>Result Page</h1>
+</head>
+<body>
+
+    Based on the marks You have scored {{ results}}
+
+    {% if results>=50 %}
+    <h1>You have passed with marks {{ results }}</h1>
+    {% else %}
+    <h1>You have failed with marks {{ results }}</h1>
+    {% endif %}
+</body>
+</html>

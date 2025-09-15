@@ -1,5 +1,12 @@
 from flask import Flask, render_template, request, redirect
 
+### jinja2 Template Engine
+'''
+{{ }} expression to print output in html
+{%...%} conditions, for loops
+(#...#) this is for comments
+'''
+
 ## WSGI Application
 app = Flask(__name__)
 
@@ -24,18 +31,17 @@ def submit():
     name = request.form['name']
     return render_template('getpost5_thankyou.html',username=name)
 
-## 1. Variable Rule (by default parameter is string)
-@app.route('/success/<score>')
+## Jinja2 template engine ({{ }} expression through html output)
+@app.route('/success/<int:score>',methods=['GET','POST'])
 def success(score):
-    return 'Thank you, your score is : '+ score
-
-## 2. Variable Rule (Explicitly defining integer)
-@app.route('/marks/<int:score>',methods=['GET'])
-def marks(score):
-    if score > 50:
-        return 'You have PASSED, your score is >50 and is: ' + str(score)
+    res = ""
+    if score >= 50:
+        res = "PASSED"
     else:
-        return 'You have FAILED, your score is <50 and is: ' + str(score) 
+        res = "FAILED"
+
+    return render_template('result1.html',results=res)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

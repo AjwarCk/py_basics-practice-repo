@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ResultPage</title>
+        <h1>Result Page</h1>
+    </head>
+    <body>
+        {% for key,value in results.items() %}
+        {# This is comment section #}
+        <h1>{{ key }}</h1>
+        <h2>{{ value }}</h2>
+        {% endfor %}
+    </body>
+</html>
