@@ -8,4 +8,5 @@ plotly
 nbformat>=4.2.0
 bs4
 flask
+streamlit
 #-e .
